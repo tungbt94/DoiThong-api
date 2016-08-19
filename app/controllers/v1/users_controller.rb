@@ -4,7 +4,8 @@ class V1::UsersController < V1::BaseController
 
   # respond_to :json
   def index
-    users = User.all
+    binding.pry
+    users = User.all.limit(10)
     render json: users, root: false
     # respond_with User.all
   end
